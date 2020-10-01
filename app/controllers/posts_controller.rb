@@ -4,8 +4,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(content: params[:content])
-    redirect_to action: :index#メッセージが送信されたとき
+    Post.create(content: params[:content],checked: false)#メモ作成時に情報保存する
+    render json:{ post: post }#レスぽんんすをjsonに変更
   end
   def checked
     # binding.pry
