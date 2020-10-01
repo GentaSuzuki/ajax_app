@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(content: params[:content],checked: false)#メモ作成時に情報保存する
+    post = Post.create(content: params[:content], checked: false)#メモ作成時に情報保存する
     render json:{ post: post }#レスぽんんすをjsonに変更
   end
   def checked
